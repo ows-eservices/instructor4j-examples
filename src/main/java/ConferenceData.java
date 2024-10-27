@@ -1,7 +1,8 @@
-package solutions.own.instructor4j.model;
+package main.java;
 
 import java.util.List;
 import solutions.own.instructor4j.annotation.Description;
+import solutions.own.instructor4j.model.ConferenceParticipant;
 
 public class ConferenceData {
 

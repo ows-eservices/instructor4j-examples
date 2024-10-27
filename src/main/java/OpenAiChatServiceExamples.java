@@ -1,7 +1,6 @@
 package main.java;
 
 import solutions.own.instructor4j.exception.InstructorException;
-import solutions.own.instructor4j.model.ConferenceData;
 import solutions.own.instructor4j.service.AiChatService;
 import solutions.own.instructor4j.service.impl.OpenAiChatService;
 import solutions.own.instructor4j.Instructor;
