@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>solutions.own.instructor4j</groupId>
     <artifactId>instructor4j-examples</artifactId>
-    <version>0.1.3</version>
+    <version>0.2.2</version>
     <packaging>pom</packaging>
     <name>Instructor4j :: Examples</name>
 
@@ -14,7 +14,21 @@
         <dependency>
             <groupId>solutions.own.instructor4j</groupId>
             <artifactId>instructor4j-openai</artifactId>
-            <version>0.1.3</version>
+            <version>0.2.2</version>
+        </dependency>
+
+        <!-- Hibernate Validator (Implementation of Bean Validation API) -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>7.0.1.Final</version>
+        </dependency>
+
+        <!-- Optional: For using Java 8 Date and Time API -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator-annotation-processor</artifactId>
+            <version>7.0.1.Final</version>
         </dependency>
     </dependencies>
 
