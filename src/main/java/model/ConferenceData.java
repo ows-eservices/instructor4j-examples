@@ -1,24 +1,29 @@
-package main.java;
+package main.java.model;
 
+import jakarta.validation.constraints.NotNull;
 import java.util.List;
 import solutions.own.instructor4j.annotation.Description;
-import solutions.own.instructor4j.model.ConferenceParticipant;
 
 public class ConferenceData {
 
     @Description("The list of conference participants identified with name, email and twitter")
+    @NotNull
     private List<ConferenceParticipant> conferenceParticipants;
 
     @Description("The date of the conference")
+    @NotNull
     private String date;
 
     @Description("The location of the conference")
+    @NotNull
     private String location;
 
     @Description("The budget of the conference")
+    @NotNull
     private Double budget;
 
     @Description("The deadline for writing the article")
+    @NotNull
     private String deadline;
 
     public ConferenceData() {}

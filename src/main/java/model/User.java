@@ -1,13 +1,16 @@
-package main.java;
+package main.java.model;
 
+import jakarta.validation.constraints.NotNull;
 import solutions.own.instructor4j.annotation.Description;
 
 public class User {
 
     @Description("The age of the user")
+    @NotNull
     private int age;
 
     @Description("The name of the user")
+    @NotNull
     private String name;
 
     public User() {

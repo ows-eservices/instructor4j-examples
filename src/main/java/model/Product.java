@@ -1,16 +1,20 @@
-package main.java;
+package main.java.model;
 
+import jakarta.validation.constraints.NotNull;
 import solutions.own.instructor4j.annotation.Description;
 
 public class Product {
 
     @Description("The unique identifier of the product")
+    @NotNull
     private String id;
 
     @Description("The name of the product")
+    @NotNull
     private String name;
 
     @Description("The price of the product")
+    @NotNull
     private double price;
 
     public Product() {

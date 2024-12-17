@@ -1,4 +1,4 @@
-package main.java;
+package main.java.config;
 
 import static solutions.own.instructor4j.util.Utils.getOrDefault;
 

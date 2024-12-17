@@ -1,15 +1,20 @@
 package main.java;
 
+import java.util.Arrays;
+import java.util.Collections;
+import main.java.config.ApiKeys;
+import main.java.model.ConferenceData;
+import main.java.model.Product;
+import main.java.model.User;
 import solutions.own.instructor4j.exception.InstructorException;
+import solutions.own.instructor4j.model.BaseMessage;
 import solutions.own.instructor4j.service.AiChatService;
 import solutions.own.instructor4j.service.impl.OpenAiChatService;
 import solutions.own.instructor4j.Instructor;
 
-import com.theokanning.openai.completion.chat.ChatMessage;
-
 import java.util.List;
 
-public class OpenAiChatServiceExamples {
+public class OpenAiChatExamples {
 
     static class Simple_User_Query {
 
@@ -18,9 +23,9 @@ public class OpenAiChatServiceExamples {
             AiChatService openAiService = new OpenAiChatService(apiKey);
             Instructor instructor = new Instructor(openAiService, 3);
 
-            List<ChatMessage> messages = List.of(
-                new ChatMessage("user", "Nenad Alajbegovic is 30 years old")
-            );
+            List<BaseMessage> messages = Collections.unmodifiableList(Arrays.asList(
+                new BaseMessage(BaseMessage.Role.USER.getValue(), "Nenad Alajbegovic is 30 years old")
+            ));
 
             try {
                 User user = instructor.createChatCompletion(messages, "gpt-4o-mini", User.class);
@@ -38,9 +43,9 @@ public class OpenAiChatServiceExamples {
             AiChatService openAiService = new OpenAiChatService(apiKey);
             Instructor instructor = new Instructor(openAiService, 3);
 
-            List<ChatMessage> messages = List.of(
-                new ChatMessage("user", "Nenad Alajbegovic will be 31 years old in 13 months")
-            );
+            List<BaseMessage> messages = Collections.unmodifiableList(Arrays.asList(
+                new BaseMessage(BaseMessage.Role.USER.getValue(), "Nenad Alajbegovic will be 27 years old next year on this same date.")
+            ));
 
             try {
                 User user = instructor.createChatCompletion(messages, "gpt-4o-mini", User.class);
@@ -58,9 +63,9 @@ public class OpenAiChatServiceExamples {
             AiChatService openAiService = new OpenAiChatService(apiKey);
             Instructor instructor = new Instructor(openAiService, 3);
 
-            List<ChatMessage> messages = List.of(
-                new ChatMessage("user", "Create a product with id P123, name 'Laptop', and price 999.99")
-            );
+            List<BaseMessage> messages = Collections.unmodifiableList(Arrays.asList(
+                new BaseMessage(BaseMessage.Role.USER.getValue(), "Create a product with id P123, name 'Laptop', and price 999.99.")
+            ));
 
             try {
                 Product product = instructor.createChatCompletion(messages, "gpt-4o-mini", Product.class);
@@ -101,9 +106,9 @@ public class OpenAiChatServiceExamples {
             AiChatService openAiService = new OpenAiChatService(apiKey);
             Instructor instructor = new Instructor(openAiService, 3);
 
-            List<ChatMessage> messages = List.of(
-                new ChatMessage("user", meetingRecord)
-            );
+            List<BaseMessage> messages = Collections.unmodifiableList(Arrays.asList(
+                new BaseMessage(BaseMessage.Role.USER.getValue(), meetingRecord)
+            ));
 
             try {
                 ConferenceData conferenceData = instructor.createChatCompletion(messages, "gpt-4o-mini",

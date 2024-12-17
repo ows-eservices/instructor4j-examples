@@ -1,16 +1,20 @@
-package solutions.own.instructor4j.model;
+package main.java.model;
 
+import jakarta.validation.constraints.NotNull;
 import solutions.own.instructor4j.annotation.Description;
 
 public class ConferenceParticipant {
 
     @Description("The name of the participant")
+    @NotNull
     private String name;
 
     @Description("The email of the participant")
+    @NotNull
     private String email;
 
     @Description("The twitter handle of the participant")
+    @NotNull
     private String twitter;
 
     public ConferenceParticipant() {}
